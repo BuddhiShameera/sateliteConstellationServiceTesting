@@ -24,7 +24,7 @@ public class ConstellationManagementControllerImpl implements ConstellationManag
 	private ConstellationManagementService constellationService;
 	
 	@Override
-	@RequestMapping(value = "/getAllSatelites", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/getAllConstellations", method = RequestMethod.GET, produces = "application/json")
 	public Response getAllConstellations() {
 		
 		logger.debug("ConstellationManagementControllerImpl -> getAllConstellations | Initiated");

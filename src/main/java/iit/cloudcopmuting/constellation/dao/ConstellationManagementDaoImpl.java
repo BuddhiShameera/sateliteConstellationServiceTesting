@@ -27,7 +27,7 @@ public class ConstellationManagementDaoImpl implements ConstellationManagementDa
 				"a.constellationID," +
 				"a.name," +
 				"a.description," +
-				"a.sateliteID," +
+				"a.sateliteID " +
 				"FROM constellation a ";
 
 
@@ -87,7 +87,7 @@ public class ConstellationManagementDaoImpl implements ConstellationManagementDa
 				"a.constellationID," +
 				"a.name," +
 				"a.description," +
-				"a.sateliteID," +
+				"a.sateliteID " +
 				"FROM constellation a " +
 				"WHERE a.constellationID = ?";
 
@@ -117,7 +117,7 @@ public class ConstellationManagementDaoImpl implements ConstellationManagementDa
 		int val = 0;
 
 		final String query = "UPDATE constellation a SET "
-				+ "a.sateliteID=?, "
+				+ "a.sateliteID=?  "
 				+ "WHERE a.constellationID=?";
 
 		val = jdbc.update(query,
@@ -133,7 +133,7 @@ public class ConstellationManagementDaoImpl implements ConstellationManagementDa
 		int val = 0;
 
 		final String query = "UPDATE constellation a SET "
-				+ "a.sateliteID=null, "
+				+ "a.sateliteID=null "
 				+ "WHERE a.constellationID=?";
 
 		val = jdbc.update(query,
@@ -149,7 +149,7 @@ public class ConstellationManagementDaoImpl implements ConstellationManagementDa
 				"a.constellationID," +
 				"a.name," +
 				"a.description," +
-				"a.sateliteID," +
+				"a.sateliteID " +
 				"FROM constellation a " +
 				"WHERE a.sateliteID = null";
 

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: constellationtestservice
+  labels:
+    app: constellationtestservice
+spec:
+  #replicas: 2
+  selector:
+    matchLabels:
+      app: constellationtestservice
+  template:
+    metadata:
+      labels:
+        app: constellationtestservice
+    spec:
+      containers:
+      - name: constellationtestservice
+        image: spacexstarlink.azurecr.io/constellationtestrepo:V1.0.0.1
+        ports:
+        - containerPort: 8085
+        resources:
+          requests:
+            cpu: 250m
+            memory: 400Mi
+          limits:
+            cpu: 500m
+            memory: 400Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: constellationtestservice
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8085
+    targetPort: 8085
+
+        
+
